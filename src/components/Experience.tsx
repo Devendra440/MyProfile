@@ -28,11 +28,12 @@ const experiences = [
     link: 'https://drive.google.com/file/d/1qHhaHMSd9wNkrQE233SStm00-IJy6ZpJ/view',
     organizationLink: 'https://drive.google.com/file/d/1lEBZw_Z46ez9NfGqyMiivFLEWaalgjdS/view',
     description: [
-      'Researched emerging technologies and industry trends to improve product capabilities',
+      'Researched emerging technologies including AI, LLMs, and ML trends to improve product capabilities',
       'Conducted experiments, feasibility studies, and PoC implementations with cross-functional teams',
       'Created research reports, whitepapers, and process documentation while managing daily deliverables in Notion',
+      'Explored Agentic AI workflows and prompt engineering techniques for automation solutions',
     ],
-    technologies: ['Research', 'Documentation', 'Notion', 'PoC Development'],
+    technologies: ['AI/ML Research', 'LLMs', 'Prompt Engineering', 'Documentation', 'Notion'],
   },
 ];
 

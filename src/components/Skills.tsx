@@ -3,9 +3,12 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { 
   FaJava, FaPython, FaHtml5, FaCss3Alt, FaJs, FaReact, 
-  FaNodeJs, FaDatabase, FaGitAlt, FaGithub, FaAws, FaChevronDown 
+  FaNodeJs, FaDatabase, FaGitAlt, FaGithub, FaAws, FaChevronDown,
+  FaBrain, FaRobot, FaChartLine, FaNetworkWired
 } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiSelenium } from 'react-icons/si';
+import { SiMongodb, SiExpress, SiSelenium, SiOpenai, SiPytorch, SiScikitlearn } from 'react-icons/si';
+import { TbPrompt } from 'react-icons/tb';
+import { BsGraphUp } from 'react-icons/bs';
 
 const skillCategories = [
   {
@@ -27,32 +30,7 @@ const skillCategories = [
         color: '#3776AB',
         depth: {
           projects: 'ML projects, automation scripts',
-          usage: 'Data analysis, machine learning, scripting',
-          level: 'Intermediate'
-        }
-      },
-    ],
-  },
-  {
-    title: 'Web Technologies',
-    skills: [
-      { 
-        name: 'HTML5', 
-        icon: FaHtml5, 
-        color: '#E34F26',
-        depth: {
-          projects: '10+ web applications',
-          usage: 'Semantic markup, accessibility',
-          level: 'Advanced'
-        }
-      },
-      { 
-        name: 'CSS3', 
-        icon: FaCss3Alt, 
-        color: '#1572B6',
-        depth: {
-          projects: 'Responsive designs, animations',
-          usage: 'Flexbox, Grid, animations, Tailwind',
+          usage: 'Data analysis, machine learning, AI development',
           level: 'Advanced'
         }
       },
@@ -66,6 +44,86 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
+      { 
+        name: 'SQL', 
+        icon: FaDatabase, 
+        color: '#00758F',
+        depth: {
+          projects: 'IBM certified',
+          usage: 'Complex queries, joins, optimization',
+          level: 'Intermediate'
+        }
+      },
+    ],
+  },
+  {
+    title: 'AI / ML / Data',
+    skills: [
+      { 
+        name: 'Machine Learning', 
+        icon: FaBrain, 
+        color: '#FF6B6B',
+        depth: {
+          projects: 'Fake News Detection, Sleep Analysis',
+          usage: 'Classification, prediction, model training',
+          level: 'Intermediate'
+        }
+      },
+      { 
+        name: 'Data Analysis', 
+        icon: FaChartLine, 
+        color: '#4ECDC4',
+        depth: {
+          projects: 'Multiple analytics projects',
+          usage: 'Preprocessing, visualization, correlation analysis',
+          level: 'Intermediate'
+        }
+      },
+      { 
+        name: 'LLMs', 
+        icon: SiOpenai, 
+        color: '#00A67E',
+        depth: {
+          projects: 'AI-driven solutions',
+          usage: 'GPT models, fine-tuning, API integration',
+          level: 'Intermediate'
+        }
+      },
+      { 
+        name: 'Prompt Engineering', 
+        icon: TbPrompt, 
+        color: '#9B59B6',
+        depth: {
+          projects: 'AI automation workflows',
+          usage: 'Crafting effective prompts, chain-of-thought',
+          level: 'Advanced'
+        }
+      },
+      { 
+        name: 'Agentic AI', 
+        icon: FaRobot, 
+        color: '#3498DB',
+        depth: {
+          projects: 'AI workflow automation',
+          usage: 'Agent design, multi-step reasoning, tool use',
+          level: 'Intermediate'
+        }
+      },
+      { 
+        name: 'Scikit-learn', 
+        icon: SiScikitlearn, 
+        color: '#F7931E',
+        depth: {
+          projects: 'ML classifier projects',
+          usage: 'Model training, evaluation, pipelines',
+          level: 'Intermediate'
+        }
+      },
+    ],
+  },
+  {
+    title: 'Web & Backend',
+    skills: [
       { 
         name: 'React.js', 
         icon: FaReact, 
@@ -96,6 +154,36 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
+      { 
+        name: 'HTML5', 
+        icon: FaHtml5, 
+        color: '#E34F26',
+        depth: {
+          projects: '10+ web applications',
+          usage: 'Semantic markup, accessibility',
+          level: 'Advanced'
+        }
+      },
+      { 
+        name: 'CSS3', 
+        icon: FaCss3Alt, 
+        color: '#1572B6',
+        depth: {
+          projects: 'Responsive designs, animations',
+          usage: 'Flexbox, Grid, Tailwind CSS',
+          level: 'Advanced'
+        }
+      },
+      { 
+        name: 'REST APIs', 
+        icon: FaNetworkWired, 
+        color: '#00D4AA',
+        depth: {
+          projects: 'Multiple API integrations',
+          usage: 'Design, consumption, authentication',
+          level: 'Intermediate'
+        }
+      },
     ],
   },
   {
@@ -108,16 +196,6 @@ const skillCategories = [
         depth: {
           projects: '5+ database designs',
           usage: 'Schema design, aggregation, indexing',
-          level: 'Intermediate'
-        }
-      },
-      { 
-        name: 'SQL', 
-        icon: FaDatabase, 
-        color: '#00758F',
-        depth: {
-          projects: 'IBM certified',
-          usage: 'Complex queries, joins, optimization',
           level: 'Intermediate'
         }
       },
@@ -151,28 +229,13 @@ const skillCategories = [
           level: 'Beginner'
         }
       },
-    ],
-  },
-  {
-    title: 'Cloud Services',
-    skills: [
       { 
-        name: 'AWS S3', 
+        name: 'AWS', 
         icon: FaAws, 
         color: '#FF9900',
         depth: {
-          projects: 'File storage solutions',
-          usage: 'Object storage, static hosting',
-          level: 'Beginner'
-        }
-      },
-      { 
-        name: 'AWS EC2', 
-        icon: FaAws, 
-        color: '#FF9900',
-        depth: {
-          projects: 'Server deployments',
-          usage: 'Instance management, scaling',
+          projects: 'Cloud deployments',
+          usage: 'S3, EC2, cloud infrastructure',
           level: 'Beginner'
         }
       },

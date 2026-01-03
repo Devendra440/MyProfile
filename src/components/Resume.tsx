@@ -108,7 +108,6 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
           </div>
 
           <div className="p-6 md:p-8 space-y-6">
-            {/* Summary */}
             <section>
               <h2 className="text-lg font-bold text-cyan-700 border-b-2 border-cyan-600 pb-1 mb-3 uppercase tracking-wide">
                 Summary
@@ -166,7 +165,6 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
               </div>
             </section>
 
-            {/* Technical Skills */}
             <section>
               <h2 className="text-lg font-bold text-cyan-700 border-b-2 border-cyan-600 pb-1 mb-3 uppercase tracking-wide">
                 Technical Skills
@@ -174,7 +172,7 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
               <div className="grid gap-2 text-sm">
                 <div><strong className="text-gray-900">Languages:</strong> <span className="text-gray-700">Java, Python, JavaScript, SQL</span></div>
                 <div><strong className="text-gray-900">Web & Backend:</strong> <span className="text-gray-700">React.js, Node.js, Express.js, HTML, CSS, REST APIs</span></div>
-                <div><strong className="text-gray-900">AI / ML / Data:</strong> <span className="text-gray-700">Machine Learning, Data Analysis, LLMs, Prompt Engineering, Agentic AI Workflows</span></div>
+                <div><strong className="text-gray-900">AI / ML / Data:</strong> <span className="text-gray-700">Machine Learning, Deep Learning, Data Analysis, LLMs, Prompt Engineering, Agentic AI Workflows, Scikit-learn</span></div>
                 <div><strong className="text-gray-900">Databases & Tools:</strong> <span className="text-gray-700">MongoDB, Git, GitHub, Selenium, Excel, Networking</span></div>
                 <div><strong className="text-gray-900">Operating Systems:</strong> <span className="text-gray-700">Windows, Linux, Ubuntu, Virtual Machines (VMs)</span></div>
               </div>
