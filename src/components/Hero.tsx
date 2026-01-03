@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiDownload, FiArrowDown } from 'react-icons/fi';
-import Resume from './Resume';
 
 const titles = [
   'Software Engineer',
   'MERN Stack Developer',
-  'Problem Solver',
+  'AI & ML Enthusiast',
   'Full Stack Developer',
 ];
 
@@ -14,7 +13,6 @@ const Hero = () => {
   const [titleIndex, setTitleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
     const currentTitle = titles[titleIndex];
@@ -54,8 +52,7 @@ const Hero = () => {
   };
 
   return (
-    <>
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
         {/* Background Grid */}
         <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-30" />
         
@@ -112,15 +109,17 @@ const Hero = () => {
             >
               <span className="relative z-10">View Projects</span>
             </motion.a>
-            <motion.button
-              onClick={() => setIsResumeOpen(true)}
+            <motion.a
+              href="https://drive.google.com/drive/folders/1Kai1k4mtS4e5GKYPVjxxCeGTBLMltLjm?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-outline-neon flex items-center justify-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <FiDownload />
               Download Resume
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Social Links */}
@@ -166,14 +165,6 @@ const Hero = () => {
           </motion.a>
         </motion.div>
       </section>
-
-      {/* Resume Modal */}
-      <AnimatePresence>
-        {isResumeOpen && (
-          <Resume isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
-        )}
-      </AnimatePresence>
-    </>
   );
 };
 
