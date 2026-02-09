@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { 
-  FaJava, FaPython, FaHtml5, FaCss3Alt, FaJs, FaReact, 
+import {
+  FaJava, FaPython, FaHtml5, FaCss3Alt, FaJs, FaReact,
   FaNodeJs, FaDatabase, FaGitAlt, FaGithub, FaAws, FaChevronDown,
   FaBrain, FaRobot, FaChartLine, FaNetworkWired, FaBug, FaClipboardCheck
 } from 'react-icons/fa';
@@ -15,9 +15,9 @@ const skillCategories = [
   {
     title: 'Programming Languages',
     skills: [
-      { 
-        name: 'Java', 
-        icon: FaJava, 
+      {
+        name: 'Java',
+        icon: FaJava,
         color: '#ED8B00',
         depth: {
           projects: '100+ DSA problems solved',
@@ -25,9 +25,9 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
-      { 
-        name: 'Python', 
-        icon: FaPython, 
+      {
+        name: 'Python',
+        icon: FaPython,
         color: '#3776AB',
         depth: {
           projects: 'ML projects, automation scripts',
@@ -35,9 +35,9 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
-      { 
-        name: 'JavaScript', 
-        icon: FaJs, 
+      {
+        name: 'JavaScript',
+        icon: FaJs,
         color: '#F7DF1E',
         depth: {
           projects: '15+ projects',
@@ -45,9 +45,9 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
-      { 
-        name: 'SQL', 
-        icon: FaDatabase, 
+      {
+        name: 'SQL',
+        icon: FaDatabase,
         color: '#00758F',
         depth: {
           projects: 'IBM certified',
@@ -60,9 +60,9 @@ const skillCategories = [
   {
     title: 'AI / ML / Data',
     skills: [
-      { 
-        name: 'Machine Learning', 
-        icon: FaBrain, 
+      {
+        name: 'Machine Learning',
+        icon: FaBrain,
         color: '#FF6B6B',
         depth: {
           projects: 'Fake News Detection, Sleep Analysis',
@@ -70,9 +70,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'Data Analysis', 
-        icon: FaChartLine, 
+      {
+        name: 'Data Analysis',
+        icon: FaChartLine,
         color: '#4ECDC4',
         depth: {
           projects: 'Multiple analytics projects',
@@ -80,9 +80,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'LLMs', 
-        icon: SiOpenai, 
+      {
+        name: 'LLMs',
+        icon: SiOpenai,
         color: '#00A67E',
         depth: {
           projects: 'AI-driven solutions',
@@ -90,9 +90,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'Prompt Engineering', 
-        icon: TbPrompt, 
+      {
+        name: 'Prompt Engineering',
+        icon: TbPrompt,
         color: '#9B59B6',
         depth: {
           projects: 'AI automation workflows',
@@ -100,9 +100,9 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
-      { 
-        name: 'Agentic AI', 
-        icon: FaRobot, 
+      {
+        name: 'Agentic AI',
+        icon: FaRobot,
         color: '#3498DB',
         depth: {
           projects: 'AI workflow automation',
@@ -110,9 +110,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'Scikit-learn', 
-        icon: SiScikitlearn, 
+      {
+        name: 'Scikit-learn',
+        icon: SiScikitlearn,
         color: '#F7931E',
         depth: {
           projects: 'ML classifier projects',
@@ -125,9 +125,9 @@ const skillCategories = [
   {
     title: 'Testing & QA',
     skills: [
-      { 
-        name: 'Manual Testing', 
-        icon: FaClipboardCheck, 
+      {
+        name: 'Manual Testing',
+        icon: FaClipboardCheck,
         color: '#10B981',
         depth: {
           projects: '3+ production projects',
@@ -135,9 +135,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'Selenium WebDriver', 
-        icon: SiSelenium, 
+      {
+        name: 'Selenium WebDriver',
+        icon: SiSelenium,
         color: '#43B02A',
         depth: {
           projects: 'Automated test suites',
@@ -145,9 +145,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'API Testing', 
-        icon: TbTestPipe, 
+      {
+        name: 'API Testing',
+        icon: TbTestPipe,
         color: '#FF6B6B',
         depth: {
           projects: 'REST API validation',
@@ -155,9 +155,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'Bug Reporting', 
-        icon: FaBug, 
+      {
+        name: 'Bug Reporting',
+        icon: FaBug,
         color: '#EF4444',
         depth: {
           projects: '40% detection improvement',
@@ -165,9 +165,9 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
-      { 
-        name: 'Jira', 
-        icon: SiJira, 
+      {
+        name: 'Jira',
+        icon: SiJira,
         color: '#0052CC',
         depth: {
           projects: 'Agile project management',
@@ -175,9 +175,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'Agile/Scrum', 
-        icon: MdOutlineSpeed, 
+      {
+        name: 'Agile/Scrum',
+        icon: MdOutlineSpeed,
         color: '#8B5CF6',
         depth: {
           projects: 'Team collaboration',
@@ -190,9 +190,9 @@ const skillCategories = [
   {
     title: 'Web & Backend',
     skills: [
-      { 
-        name: 'React.js', 
-        icon: FaReact, 
+      {
+        name: 'React.js',
+        icon: FaReact,
         color: '#61DAFB',
         depth: {
           projects: '6+ production apps',
@@ -200,9 +200,9 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
-      { 
-        name: 'Node.js', 
-        icon: FaNodeJs, 
+      {
+        name: 'Node.js',
+        icon: FaNodeJs,
         color: '#339933',
         depth: {
           projects: '5+ backend services',
@@ -210,9 +210,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'Express.js', 
-        icon: SiExpress, 
+      {
+        name: 'Express.js',
+        icon: SiExpress,
         color: '#FFFFFF',
         depth: {
           projects: 'MERN stack applications',
@@ -220,9 +220,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'HTML5', 
-        icon: FaHtml5, 
+      {
+        name: 'HTML5',
+        icon: FaHtml5,
         color: '#E34F26',
         depth: {
           projects: '10+ web applications',
@@ -230,9 +230,9 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
-      { 
-        name: 'CSS3', 
-        icon: FaCss3Alt, 
+      {
+        name: 'CSS3',
+        icon: FaCss3Alt,
         color: '#1572B6',
         depth: {
           projects: 'Responsive designs, animations',
@@ -240,9 +240,9 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
-      { 
-        name: 'REST APIs', 
-        icon: FaNetworkWired, 
+      {
+        name: 'REST APIs',
+        icon: FaNetworkWired,
         color: '#00D4AA',
         depth: {
           projects: 'Multiple API integrations',
@@ -255,9 +255,9 @@ const skillCategories = [
   {
     title: 'Databases & Tools',
     skills: [
-      { 
-        name: 'MongoDB', 
-        icon: SiMongodb, 
+      {
+        name: 'MongoDB',
+        icon: SiMongodb,
         color: '#47A248',
         depth: {
           projects: '5+ database designs',
@@ -265,9 +265,9 @@ const skillCategories = [
           level: 'Intermediate'
         }
       },
-      { 
-        name: 'Git', 
-        icon: FaGitAlt, 
+      {
+        name: 'Git',
+        icon: FaGitAlt,
         color: '#F05032',
         depth: {
           projects: '500+ commits',
@@ -275,9 +275,9 @@ const skillCategories = [
           level: 'Advanced'
         }
       },
-      { 
-        name: 'GitHub', 
-        icon: FaGithub, 
+      {
+        name: 'GitHub',
+        icon: FaGithub,
         color: '#FFFFFF',
         depth: {
           projects: '20+ repositories',
@@ -315,7 +315,7 @@ const Skills = () => {
     <section id="skills" className="py-20 md:py-32 relative" ref={ref}>
       {/* Background accent */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-secondary/10 rounded-full blur-[100px] -translate-y-1/2" />
-      
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           className="text-center mb-16"
@@ -329,7 +329,7 @@ const Skills = () => {
             My <span className="gradient-text">Tech Stack</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Technologies and tools I work with to bring ideas to life. 
+            Technologies and tools I work with to bring ideas to life.
             <span className="text-primary"> Click any skill to see depth!</span>
           </p>
         </motion.div>
@@ -347,7 +347,7 @@ const Skills = () => {
                 <span className="w-2 h-2 rounded-full bg-primary" />
                 {category.title}
               </h3>
-              
+
               <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill: Skill, skillIndex) => (
                   <motion.div
@@ -358,16 +358,15 @@ const Skills = () => {
                     transition={{ delay: catIndex * 0.1 + skillIndex * 0.05 }}
                   >
                     <motion.div
-                      className={`flex items-center gap-2 px-4 py-3 rounded-lg bg-muted/50 border cursor-pointer transition-all duration-300 ${
-                        expandedSkill === skill.name 
-                          ? 'border-primary shadow-[0_0_20px_rgba(0,245,255,0.3)]' 
-                          : 'border-border hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,245,255,0.15)]'
-                      }`}
+                      className={`flex items-center gap-2 px-4 py-3 rounded-lg bg-muted/50 border cursor-pointer transition-all duration-300 ${expandedSkill === skill.name
+                        ? 'border-primary shadow-[0_0_20px_rgba(0,245,255,0.3)]'
+                        : 'border-border hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,245,255,0.15)]'
+                        }`}
                       onClick={() => toggleSkill(skill.name)}
                       whileHover={{ y: -3 }}
                     >
-                      <skill.icon 
-                        className="w-5 h-5 transition-transform group-hover:scale-110" 
+                      <skill.icon
+                        className="w-5 h-5 transition-transform group-hover:scale-110"
                         style={{ color: skill.color }}
                       />
                       <span className="text-sm font-medium text-foreground">{skill.name}</span>
@@ -378,50 +377,58 @@ const Skills = () => {
                         <FaChevronDown className="w-3 h-3 text-muted-foreground" />
                       </motion.div>
                     </motion.div>
-                    
-                    {/* Expanded Depth View */}
-                    <motion.div
-                      className="absolute top-full left-0 mt-2 z-20 w-64"
-                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                      animate={{ 
-                        opacity: expandedSkill === skill.name ? 1 : 0,
-                        y: expandedSkill === skill.name ? 0 : -10,
-                        scale: expandedSkill === skill.name ? 1 : 0.95,
-                        pointerEvents: expandedSkill === skill.name ? 'auto' : 'none'
-                      }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="glass-card p-4 rounded-lg border border-primary/30 shadow-lg">
-                        <div className="flex items-center gap-2 mb-3 pb-2 border-b border-border">
-                          <skill.icon className="w-6 h-6" style={{ color: skill.color }} />
-                          <span className="font-semibold text-foreground">{skill.name}</span>
-                          <span 
-                            className={`ml-auto text-xs px-2 py-0.5 rounded-full ${
-                              skill.depth.level === 'Advanced' 
-                                ? 'bg-green-500/20 text-green-400' 
-                                : skill.depth.level === 'Intermediate'
-                                ? 'bg-yellow-500/20 text-yellow-400'
-                                : 'bg-blue-500/20 text-blue-400'
-                            }`}
-                          >
-                            {skill.depth.level}
-                          </span>
-                        </div>
-                        <div className="space-y-2 text-sm">
-                          <div>
-                            <p className="text-primary text-xs font-medium">Experience</p>
-                            <p className="text-muted-foreground">{skill.depth.projects}</p>
-                          </div>
-                          <div>
-                            <p className="text-primary text-xs font-medium">Usage</p>
-                            <p className="text-muted-foreground">{skill.depth.usage}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
+
+
                   </motion.div>
                 ))}
               </div>
+
+              {/* Category-level Inline Details */}
+              <AnimatePresence>
+                {category.skills.some(s => s.name === expandedSkill) && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                    animate={{ opacity: 1, height: 'auto', marginTop: 20 }}
+                    exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    {(() => {
+                      const skill = category.skills.find(s => s.name === expandedSkill);
+                      if (!skill) return null;
+                      return (
+                        <div className="mt-2 text-left bg-zinc-950/50 backdrop-blur-md p-5 rounded-xl border border-primary/20 shadow-inner">
+                          <div className="flex items-center gap-3 mb-4 pb-3 border-b border-white/10">
+                            <div className="p-2 rounded-lg bg-white/5">
+                              <skill.icon className="w-6 h-6" style={{ color: skill.color }} />
+                            </div>
+                            <div>
+                              <h4 className="font-bold text-lg leading-none mb-1">{skill.name}</h4>
+                              <span className={`inline-block text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold border ${skill.depth.level === 'Advanced'
+                                  ? 'bg-green-500/10 text-green-400 border-green-500/20'
+                                  : 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+                                }`}>
+                                {skill.depth.level}
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="grid gap-4 sm:grid-cols-2">
+                            <div className="space-y-1">
+                              <p className="text-[10px] font-bold text-primary uppercase tracking-wider">Experience</p>
+                              <p className="text-sm text-zinc-300 leading-relaxed">{skill.depth.projects}</p>
+                            </div>
+                            <div className="space-y-1">
+                              <p className="text-[10px] font-bold text-primary uppercase tracking-wider">Usage</p>
+                              <p className="text-sm text-zinc-300 leading-relaxed">{skill.depth.usage}</p>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })()}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>
@@ -438,7 +445,7 @@ const Skills = () => {
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center animate-pulse-glow">
               <span className="text-primary-foreground font-heading font-bold text-xl">MERN</span>
             </div>
-            
+
             {/* Orbiting icons */}
             {[FaReact, SiMongodb, FaNodeJs, SiExpress].map((Icon, i) => (
               <motion.div

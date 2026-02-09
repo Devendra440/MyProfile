@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub, FiCalendar } from 'react-icons/fi';
+import { FiExternalLink, FiGithub, FiCalendar, FiStar } from 'react-icons/fi';
+import TiltCard from '@/components/ui/TiltCard';
 
 const projects = [
   {
@@ -43,7 +44,7 @@ const Projects = () => {
       {/* Background accents */}
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-primary/10 rounded-full blur-[100px]" />
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-secondary/10 rounded-full blur-[100px]" />
-      
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           className="text-center mb-16"
@@ -70,10 +71,10 @@ const Projects = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.2 }}
             >
-              <div className="relative glass-card rounded-2xl overflow-hidden">
+              <TiltCard className="relative glass-card rounded-2xl overflow-hidden">
                 {/* Gradient top border */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient}`} />
-                
+
                 {/* Card content */}
                 <div className="p-6 md:p-8">
                   {/* Header */}
@@ -88,7 +89,7 @@ const Projects = () => {
                       </h3>
                       <span className="text-sm text-secondary font-medium">{project.subtitle}</span>
                     </div>
-                    
+
                     {/* Links */}
                     <div className="flex gap-3">
                       {project.githubLink && (
@@ -131,7 +132,7 @@ const Projects = () => {
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ delay: index * 0.2 + i * 0.1 }}
                       >
-                        <span className="text-primary mt-1">✦</span>
+                        <FiStar className="w-3 h-3 text-primary mt-1 flex-shrink-0 fill-current" />
                         {highlight}
                       </motion.li>
                     ))}
@@ -149,7 +150,7 @@ const Projects = () => {
 
                 {/* Hover effect overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-              </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>

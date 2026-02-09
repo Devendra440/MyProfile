@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiHeart } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,8 +12,7 @@ const Footer = () => {
           <div className="flex items-center gap-2 text-muted-foreground">
             <span className="text-xl font-heading font-bold gradient-text">DG</span>
             <span className="text-sm">
-              © {currentYear} Devendra Gupta. Built with{' '}
-              <FiHeart className="inline-block w-4 h-4 text-red-500 animate-pulse" />
+              © {currentYear} Devendra Gupta. All rights reserved.
             </span>
           </div>
 
