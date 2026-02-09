@@ -5,19 +5,20 @@ import { FiCalendar, FiExternalLink, FiMapPin } from 'react-icons/fi';
 
 const experiences = [
   {
-    title: 'Full Stack Developer',
+    title: 'Full Stack Developer & QA Analyst',
     company: 'Student-Tech-Genesis',
     type: 'Student Group',
     location: 'Hyderabad',
     period: 'Jan – June 2025',
     link: 'https://student-tech-genesis.netlify.app/',
     description: [
-      'Collaborated in a team to develop 3 real-time projects for businesses in Hyderabad',
-      'Increased client marketing growth and customer outreach by 15% through new online solutions',
-      'Personally contributed to full-stack development using React.js and MongoDB',
-      'The team\'s overall tech stack included TypeScript, Node.js, and Python for backend services',
+      'Developed 3 real-time production projects using MERN stack and Java backend services',
+      'Increased client marketing growth and customer outreach by 15% through innovative solutions',
+      'Performed manual testing, created comprehensive test cases, and identified critical bugs pre-deployment',
+      'Managed project tracking using Jira, coordinating with Agile team workflows',
+      'Implemented Selenium WebDriver for automated testing of React.js applications',
     ],
-    technologies: ['React.js', 'MongoDB', 'Node.js', 'TypeScript', 'Python'],
+    technologies: ['React.js', 'MongoDB', 'Node.js', 'Selenium', 'Jira', 'Agile'],
   },
   {
     title: 'Research & Development (R&D)',
@@ -28,12 +29,11 @@ const experiences = [
     link: 'https://drive.google.com/file/d/1qHhaHMSd9wNkrQE233SStm00-IJy6ZpJ/view',
     organizationLink: 'https://drive.google.com/file/d/1lEBZw_Z46ez9NfGqyMiivFLEWaalgjdS/view',
     description: [
-      'Researched emerging technologies including AI, LLMs, and ML trends to improve product capabilities',
-      'Conducted experiments, feasibility studies, and PoC implementations with cross-functional teams',
-      'Created research reports, whitepapers, and process documentation while managing daily deliverables in Notion',
-      'Explored Agentic AI workflows and prompt engineering techniques for automation solutions',
+      'Researched emerging technologies and industry trends to improve product capabilities',
+      'Conducted feasibility studies and proof-of-concept implementations with Agile teams',
+      'Created technical documentation and managed deliverables using Jira',
     ],
-    technologies: ['AI/ML Research', 'LLMs', 'Prompt Engineering', 'Documentation', 'Notion'],
+    technologies: ['AI/ML Research', 'Jira', 'Agile', 'Documentation', 'Notion'],
   },
 ];
 
