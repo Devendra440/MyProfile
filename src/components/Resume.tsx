@@ -54,16 +54,29 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
       >
         {/* Controls */}
         <div className="flex justify-between items-center mb-4 px-2">
-          <motion.button
-            onClick={handleDownload}
-            disabled={isDownloading}
-            className="btn-gradient flex items-center gap-2 text-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FiDownload className={isDownloading ? 'animate-bounce' : ''} />
-            {isDownloading ? 'Generating PDF...' : 'Download PDF'}
-          </motion.button>
+          <div className="flex items-center gap-3">
+            <motion.a
+              href="https://drive.google.com/drive/folders/1Kai1k4mtS4e5GKYPVjxxCeGTBLMltLjm?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gradient flex items-center gap-2 text-sm"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FiDownload />
+              Download PDF
+            </motion.a>
+            <motion.button
+              onClick={handleDownload}
+              disabled={isDownloading}
+              className="btn-outline-neon flex items-center gap-2 text-sm px-4 py-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FiDownload className={isDownloading ? 'animate-bounce' : ''} />
+              {isDownloading ? 'Generating...' : 'Generate PDF'}
+            </motion.button>
+          </div>
           <motion.button
             onClick={onClose}
             className="p-2 glass-card rounded-full text-muted-foreground hover:text-foreground transition-colors"
@@ -86,7 +99,7 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
               PINNAM DEVENDRA GUPTA
             </h1>
             <p className="text-center text-cyan-100 mb-4">
-              AI & Full Stack Developer | MERN Stack | Machine Learning
+              Full Stack Developer & QA Testing Specialist | MERN Stack | Machine Learning
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <a href="mailto:pinnamguptha1234@gmail.com" className="flex items-center gap-1 hover:text-cyan-200 transition-colors">
@@ -113,10 +126,10 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
                 Summary
               </h2>
               <p className="text-gray-700 leading-relaxed text-sm">
-                AI & Full Stack Developer with strong expertise in <strong>MERN Stack, Machine Learning, Data Analysis, LLMs, and Agentic AI workflows</strong>. 
-                Skilled in React.js, Node.js, Express.js, MongoDB, JavaScript, Python, Java, SQL, RESTful APIs, AWS. 
-                Delivered 3+ real-time client projects improving outreach by 15%, built ML classifiers achieving 95% accuracy, 
-                and developed AI-driven analytical and automation solutions using modern AI tools and prompt engineering.
+                Full Stack Developer & QA Testing Specialist with expertise in <strong>MERN Stack, Machine Learning, Data Analysis, and comprehensive testing frameworks</strong>. 
+                Skilled in React.js, Node.js, Express.js, MongoDB, Java, Python, SQL, Selenium, Agile, and Jira. 
+                Delivered 3+ real-time client projects improving outreach by 15%. Built ML classifiers achieving 95% accuracy. 
+                Experienced in manual testing, test automation, and Agile/Jira workflow management.
               </p>
             </section>
 
@@ -129,17 +142,18 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
               <div className="space-y-4">
                 <div>
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="font-bold text-gray-900">Full Stack Developer</h3>
+                    <h3 className="font-bold text-gray-900">Full Stack Developer & QA Analyst</h3>
                     <span className="text-sm text-gray-600">Jan – June 2025</span>
                   </div>
                   <a href="https://student-tech-genesis.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:underline text-sm flex items-center gap-1 mb-2">
-                    Student-Tech-Genesis (Student Group) <FiExternalLink size={12} />
+                    Student-Tech-Genesis (Student Group) | Hyderabad <FiExternalLink size={12} />
                   </a>
                   <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                    <li>Collaborated in a team to develop 3 real-time projects for businesses in Hyderabad</li>
-                    <li>Increased client marketing growth and customer outreach by 15% through new online solutions</li>
-                    <li>Personally contributed to full-stack development using React.js and MongoDB</li>
-                    <li>The team's overall tech stack included React.js, Node.js, and Python for backend services</li>
+                    <li>Developed 3 real-time production projects using MERN stack and Java backend services</li>
+                    <li>Increased client marketing growth and customer outreach by 15% through innovative solutions</li>
+                    <li>Performed manual testing, created comprehensive test cases, and identified critical bugs pre-deployment</li>
+                    <li>Managed project tracking using Jira, coordinating with Agile team workflows</li>
+                    <li>Implemented Selenium WebDriver for automated testing of React.js applications</li>
                   </ul>
                 </div>
 
@@ -158,8 +172,8 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
                   </div>
                   <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                     <li>Researched emerging technologies and industry trends to improve product capabilities</li>
-                    <li>Conducted experiments, feasibility studies, and PoC implementations with cross-functional teams</li>
-                    <li>Created research reports, whitepapers, and process documentation while managing daily deliverables in Notion</li>
+                    <li>Conducted feasibility studies and proof-of-concept implementations with Agile teams</li>
+                    <li>Created technical documentation and managed deliverables using Jira</li>
                   </ul>
                 </div>
               </div>
@@ -172,8 +186,10 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
               <div className="grid gap-2 text-sm">
                 <div><strong className="text-gray-900">Languages:</strong> <span className="text-gray-700">Java, Python, JavaScript, SQL</span></div>
                 <div><strong className="text-gray-900">Web & Backend:</strong> <span className="text-gray-700">React.js, Node.js, Express.js, HTML, CSS, REST APIs</span></div>
-                <div><strong className="text-gray-900">AI / ML / Data:</strong> <span className="text-gray-700">Machine Learning, Deep Learning, Data Analysis, LLMs, Prompt Engineering, Agentic AI Workflows, Scikit-learn</span></div>
-                <div><strong className="text-gray-900">Databases & Tools:</strong> <span className="text-gray-700">MongoDB, Git, GitHub, Selenium, Excel, Networking</span></div>
+                <div><strong className="text-gray-900">Testing & QA:</strong> <span className="text-gray-700">Manual Testing, Selenium WebDriver, Test Automation, Test Case Development, Bug Reporting, API Testing</span></div>
+                <div><strong className="text-gray-900">Project Management:</strong> <span className="text-gray-700">Jira, Agile, Scrum, Issue Tracking, Sprint Planning</span></div>
+                <div><strong className="text-gray-900">ML / Data:</strong> <span className="text-gray-700">Machine Learning, Data Analysis, Prompt Engineering</span></div>
+                <div><strong className="text-gray-900">Databases & Tools:</strong> <span className="text-gray-700">MongoDB, Git, GitHub, Excel</span></div>
                 <div><strong className="text-gray-900">Operating Systems:</strong> <span className="text-gray-700">Windows, Linux, Ubuntu, Virtual Machines (VMs)</span></div>
               </div>
             </section>
@@ -194,23 +210,24 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
                     Live Demo <FiExternalLink size={12} />
                   </a>
                   <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                    <li>Created a machine learning application using Python and scikit-learn to classify news content</li>
-                    <li>Trained a classifier on a dataset containing title, text, subject, and date fields to identify fake news</li>
-                    <li>Increased model accuracy by 32% compared to earlier versions, detecting fraudulent news within 60 seconds</li>
+                    <li>Created ML application using Python and scikit-learn to classify news content</li>
+                    <li>Performed comprehensive testing including data validation and accuracy verification</li>
+                    <li>Trained classifier on 15,000+ samples with 32% accuracy improvement</li>
                   </ul>
                 </div>
 
                 <div>
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="font-bold text-gray-900">Sleeping Disorder Analysis — Data Analytics</h3>
+                    <h3 className="font-bold text-gray-900">Sleeping Disorder Analysis — Data Analytics & Testing</h3>
                     <span className="text-sm text-gray-600">July – Sep 2024</span>
                   </div>
                   <a href="https://github.com/Devendra440/Sleeping-Disorder-Analysis-Data-Analytics-Project/tree/main/sleeping_disorder_prediction" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:underline text-sm flex items-center gap-1 mb-2">
                     GitHub Repository <FiExternalLink size={12} />
                   </a>
                   <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                    <li>Performed data preprocessing, feature extraction, and correlation analysis using Python, Excel, and visualization libraries</li>
-                    <li>Achieved 95% prediction accuracy, enabling users to understand sleep issues and improve sleep structure by 60–70%</li>
+                    <li>Performed data preprocessing, feature extraction, and correlation analysis</li>
+                    <li>Built predictive ML model achieving 95% accuracy with test coverage validation</li>
+                    <li>Implemented manual testing protocols to verify data integrity and prediction reliability</li>
                   </ul>
                 </div>
               </div>
@@ -224,10 +241,12 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
               <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                 <li>
                   <a href="https://github.com/Devendra440/Java-100DCodesChallenge" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:underline">
-                    Completed 100 Java coding problems
-                  </a> in one month, advancing from basic to complex challenges and improving proficiency in algorithms, data structures, and logical problem-solving
+                    Completed 100+ Java coding problems
+                  </a> in 30 days, mastering algorithms and data structures
                 </li>
-                <li>Collaborated in a team to develop 3 real-time projects, spearheading development of client-facing web applications that increased client marketing growth and customer outreach by 15%</li>
+                <li>Developed 3+ client-facing web applications with rigorous manual and automated testing</li>
+                <li>Built automated test suites using Selenium WebDriver; improved bug detection accuracy by 40%</li>
+                <li>Managed Agile/Scrum sprints using Jira; delivered projects on schedule and within scope</li>
               </ul>
             </section>
 
@@ -269,7 +288,7 @@ const Resume = ({ isOpen, onClose }: ResumeProps) => {
                 <div className="flex flex-wrap justify-between">
                   <div>
                     <strong className="text-gray-900">B.Tech in CSE</strong> — Malla Reddy University, Hyderabad
-                    <span className="text-gray-600 ml-2">CGPA: 8.63/10 (Pursuing)</span>
+                    <span className="text-gray-600 ml-2">CGPA: 8.67/10 (Pursuing)</span>
                   </div>
                   <span className="text-gray-600">2022 – 2026</span>
                 </div>
