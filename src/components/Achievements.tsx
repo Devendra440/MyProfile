@@ -6,8 +6,8 @@ import { FiAward, FiCode, FiUsers, FiTrendingUp, FiExternalLink } from 'react-ic
 const achievements = [
   {
     icon: FiCode,
-    title: '100 Java Coding Challenge',
-    description: 'Completed 100 Java coding problems in one month, advancing from basic to complex challenges',
+    title: '100+ Java Coding Challenge',
+    description: 'Completed 100+ Java coding problems in 30 days, mastering algorithms and data structures',
     metric: '100+',
     metricLabel: 'Problems',
     link: 'https://github.com/Devendra440/Java-100DCodesChallenge',
@@ -15,19 +15,27 @@ const achievements = [
   },
   {
     icon: FiUsers,
-    title: 'Client-Facing Applications',
-    description: 'Spearheaded the development of 3+ client-facing web applications',
+    title: 'Client Applications with Testing',
+    description: 'Developed 3+ client-facing web applications with rigorous manual and automated testing',
     metric: '3+',
     metricLabel: 'Projects',
     color: 'secondary',
   },
   {
     icon: FiTrendingUp,
-    title: 'Client Growth Impact',
-    description: 'Increased client marketing growth and customer outreach significantly',
-    metric: '15%',
-    metricLabel: 'Growth',
+    title: 'Bug Detection Improvement',
+    description: 'Built automated test suites using Selenium WebDriver; improved bug detection accuracy',
+    metric: '40%',
+    metricLabel: 'Improvement',
     color: 'accent',
+  },
+  {
+    icon: FiAward,
+    title: 'Agile/Scrum Management',
+    description: 'Managed Agile/Scrum sprints using Jira; delivered projects on schedule and within scope',
+    metric: '15%',
+    metricLabel: 'Client Growth',
+    color: 'primary',
   },
 ];
 
@@ -86,7 +94,7 @@ const Achievements = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {achievements.map((achievement, index) => (
             <motion.div
               key={achievement.title}

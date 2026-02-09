@@ -4,11 +4,12 @@ import { useRef, useState } from 'react';
 import { 
   FaJava, FaPython, FaHtml5, FaCss3Alt, FaJs, FaReact, 
   FaNodeJs, FaDatabase, FaGitAlt, FaGithub, FaAws, FaChevronDown,
-  FaBrain, FaRobot, FaChartLine, FaNetworkWired
+  FaBrain, FaRobot, FaChartLine, FaNetworkWired, FaBug, FaClipboardCheck
 } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiSelenium, SiOpenai, SiPytorch, SiScikitlearn } from 'react-icons/si';
-import { TbPrompt } from 'react-icons/tb';
-import { BsGraphUp } from 'react-icons/bs';
+import { SiMongodb, SiExpress, SiSelenium, SiOpenai, SiScikitlearn, SiJira } from 'react-icons/si';
+import { TbPrompt, TbTestPipe } from 'react-icons/tb';
+import { VscDebugAlt } from 'react-icons/vsc';
+import { MdOutlineSpeed } from 'react-icons/md';
 
 const skillCategories = [
   {
@@ -122,6 +123,71 @@ const skillCategories = [
     ],
   },
   {
+    title: 'Testing & QA',
+    skills: [
+      { 
+        name: 'Manual Testing', 
+        icon: FaClipboardCheck, 
+        color: '#10B981',
+        depth: {
+          projects: '3+ production projects',
+          usage: 'Test case development, bug reporting, regression testing',
+          level: 'Intermediate'
+        }
+      },
+      { 
+        name: 'Selenium WebDriver', 
+        icon: SiSelenium, 
+        color: '#43B02A',
+        depth: {
+          projects: 'Automated test suites',
+          usage: 'Web automation, E2E testing, cross-browser testing',
+          level: 'Intermediate'
+        }
+      },
+      { 
+        name: 'API Testing', 
+        icon: TbTestPipe, 
+        color: '#FF6B6B',
+        depth: {
+          projects: 'REST API validation',
+          usage: 'Postman, endpoint testing, response validation',
+          level: 'Intermediate'
+        }
+      },
+      { 
+        name: 'Bug Reporting', 
+        icon: FaBug, 
+        color: '#EF4444',
+        depth: {
+          projects: '40% detection improvement',
+          usage: 'Issue tracking, reproduction steps, severity classification',
+          level: 'Advanced'
+        }
+      },
+      { 
+        name: 'Jira', 
+        icon: SiJira, 
+        color: '#0052CC',
+        depth: {
+          projects: 'Agile project management',
+          usage: 'Sprint planning, issue tracking, workflow management',
+          level: 'Intermediate'
+        }
+      },
+      { 
+        name: 'Agile/Scrum', 
+        icon: MdOutlineSpeed, 
+        color: '#8B5CF6',
+        depth: {
+          projects: 'Team collaboration',
+          usage: 'Sprint planning, daily standups, retrospectives',
+          level: 'Intermediate'
+        }
+      },
+    ],
+  },
+  {
     title: 'Web & Backend',
     skills: [
       { 
@@ -217,26 +283,6 @@ const skillCategories = [
           projects: '20+ repositories',
           usage: 'CI/CD, Actions, collaboration',
           level: 'Advanced'
-        }
-      },
-      { 
-        name: 'Selenium', 
-        icon: SiSelenium, 
-        color: '#43B02A',
-        depth: {
-          projects: 'Automation testing',
-          usage: 'Web scraping, test automation',
-          level: 'Beginner'
-        }
-      },
-      { 
-        name: 'AWS', 
-        icon: FaAws, 
-        color: '#FF9900',
-        depth: {
-          projects: 'Cloud deployments',
-          usage: 'S3, EC2, cloud infrastructure',
-          level: 'Beginner'
         }
       },
     ],
